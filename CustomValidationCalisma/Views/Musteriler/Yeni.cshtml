@@ -1,0 +1,24 @@
+﻿@model Musteri
+@{
+    ViewBag.Title = "Yeni Müşteri";
+}
+
+<form method="post">
+
+    <div class="mb-3">
+
+        <label asp-for="Ad"></label>
+        <input asp-for="Ad" class="form-control"/>
+        <span asp-validation-for="Ad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="DogumTarihi"></label>
+        <input asp-for="DogumTarihi" class="form-control" />
+        <span asp-validation-for="DogumTarihi" class="text-danger"></span>
+    </div>
+    
+    <button class="btn btn-primary">Ekle</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+
+</form>

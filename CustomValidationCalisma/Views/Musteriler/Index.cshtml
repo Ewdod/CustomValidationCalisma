@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Musteri>
+@{
+    ViewBag.Title = "Müşteriler";
+}
+
+@if(
+    !string.IsNullOrEmpty(ViewBag.Mesaj)
+)
+{
+    <div class="alert alert-success">
+        @ViewBag.Mesaj
+    </div>
+}
+<div class="d-flex justify-content-between align-items-center">
+<h1>Musteriler</h1>
+    <a asp-action="Yeni" class="btn btn-primary"> <i class="fa-solid fa-plus"></i> </a>
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>@Html.DisplayNameFor(x => x.Ad)</th>
+            <th>@Html.DisplayNameFor(x => x.DogumTarihi)</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Ad</td>
+                <td>@item.DogumTarihi</td>
+            </tr>
+        }
+    </tbody>
+        
+</table>
